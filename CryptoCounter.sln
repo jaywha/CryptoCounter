@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCounter", "CryptoCounter\CryptoCounter.csproj", "{822A29C1-EAF6-41AA-9F22-4BF0CE9D9787}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{822A29C1-EAF6-41AA-9F22-4BF0CE9D9787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822A29C1-EAF6-41AA-9F22-4BF0CE9D9787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822A29C1-EAF6-41AA-9F22-4BF0CE9D9787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822A29C1-EAF6-41AA-9F22-4BF0CE9D9787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADCD361F-FDF7-430F-B55D-ED7C907C2EA4}
+	EndGlobalSection
+EndGlobal

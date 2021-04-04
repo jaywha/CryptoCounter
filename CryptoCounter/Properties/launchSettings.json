@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CryptoCounter": {
+      "commandName": "Project",
+      "commandLineArgs": "0xBF4baCB43d6Bbd9Cc9cdbd2c4Da3FAf2eAbBED89"
+    }
+  }
+}
