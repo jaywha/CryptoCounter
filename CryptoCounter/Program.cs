@@ -8,7 +8,8 @@ namespace CryptoCounter
 {
     public class Program
     {
-        public static bool exitLoop = false;
+        static bool exitLoop = false;
+        static int secondsToSleep = 10;
 
         static void Main(string[] args)
         {
@@ -16,26 +17,32 @@ namespace CryptoCounter
 
             var client = new RestClient("https://eth.2miners.com/");
             var request = new RestRequest($"api/accounts/{args[0]}", DataFormat.Json);
-            var response = client.Get(request);
-
-            var jsonResult = JsonConvert.DeserializeObject<AccountReturnModel>(response.Content);
 
             while (!exitLoop)
             {
-                Console.Clear();
-                Console.WriteLine($"{DateTime.Now}");
-                Console.WriteLine($"Current Balance: 0.0{jsonResult.stats.balance}");
+                var response = client.Get(request);
+                var jsonResult = JsonConvert.DeserializeObject<AccountReturnModel>(response.Content);
 
-                var key = Console.ReadKey();
-                switch (key.Key)
+                Console.Clear();
+                Console.Title = "Crypto Counter - ETH (2miners)";
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"{DateTime.Now}");
+                Console.WriteLine($"Current Balance: {(double)jsonResult.stats.balance/1000000000}");
+
+                if (Console.KeyAvailable)
                 {
-                    default:
-                        continue;
-                    case ConsoleKey.Q:
-                    case ConsoleKey.Escape:
-                        exitLoop = true;
-                        break;
+                    switch (Console.ReadKey().Key)
+                    {
+                        default:
+                            continue;
+                        case ConsoleKey.Q:
+                        case ConsoleKey.Escape:
+                            exitLoop = true;
+                            break;
+                    }
                 }
+
+                Thread.Sleep(secondsToSleep*1000);
             }
         }
     }
